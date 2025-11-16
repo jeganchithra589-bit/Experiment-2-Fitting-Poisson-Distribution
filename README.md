@@ -15,6 +15,12 @@ Python and Visual Component Tool
 # Algorithm
 <img width="1144" height="412" alt="image" src="https://github.com/user-attachments/assets/6bf357bd-7ba2-4908-8c93-ef74e4747a4f" />
 
+# Name: Jeagn P
+# Reg_No: 25017588
+# Slot_Name: 3P1-1
+# Date: 16-11-2025
+
+
 # Program
 ```
 # Exp: No-2
@@ -87,11 +93,9 @@ else:
     print("Result: Data does NOT fit Poisson distribution at 1% LOS")
 
 ```
+# Google colab link:
 
-# Name: Jeagn P
-# Reg_No: 25017588
-# Slot_Name: 3P1-1
-# Date: 16-11-2025
+https://colab.research.google.com/drive/1x8Vh7_XzTXvVkE27G4Fqj0VUKvquheb1?usp=sharing
 
 
 
