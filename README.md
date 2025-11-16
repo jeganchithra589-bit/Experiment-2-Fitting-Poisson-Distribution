@@ -16,12 +16,87 @@ Python and Visual Component Tool
 <img width="1144" height="412" alt="image" src="https://github.com/user-attachments/assets/6bf357bd-7ba2-4908-8c93-ef74e4747a4f" />
 
 # Program
+```
+# Exp: No-2
+import numpy as np
+import math
+import scipy.stats
 
+# Input
+L = [int(i) for i in input().split()]
+N = len(L)
+M = max(L)
 
+X = []
+f = []
+
+# Frequency count
+for i in range(M + 1):
+    c = 0
+    for j in range(N):
+        if L[j] == i:
+            c += 1
+    f.append(c)
+    X.append(i)
+
+sf = np.sum(f)
+
+# Probability of each X
+p = []
+for i in range(M + 1):
+    p.append(f[i] / sf)
+
+# Mean of the distribution
+mean = np.inner(X, p)
+
+# Poisson expected frequencies
+p = []
+E = []
+xi = []
+
+print("X   P(X=x)  Obs.Fr  Exp.Fr  xi")
+print("--------------------------------")
+
+for x in range(M + 1):
+    px = math.exp(-mean) * mean**x / math.factorial(x)
+    p.append(px)
+
+    expected = px * sf
+    E.append(expected)
+
+    chi_term = ((f[x] - expected) ** 2) / expected
+    xi.append(chi_term)
+
+    print("%2d  %.3f   %4d   %.2f   %.3f" % (x, px, f[x], expected, chi_term))
+
+print("--------------------------------")
+
+# Chi-square calculated value
+cal_chi2_sq = np.sum(xi)
+print("Calculated Chi-square = %.4f" % cal_chi2_sq)
+
+# Table value (1% LOS)
+df = M
+table_chi2 = scipy.stats.chi2.ppf(1 - 0.01, df=df)
+print("Table Chi-square (1%% LOS) = %.4f" % table_chi2)
+
+# Decision
+if cal_chi2_sq < table_chi2:
+    print("Result: Data fits Poisson distribution at 1% LOS")
+else:
+    print("Result: Data does NOT fit Poisson distribution at 1% LOS")
+
+```
+
+# Name: Jeagn P
+# Reg_No: 25017588
+# Slot_Name: 3P1-1
+# Date: 16-11-2025
 
 
 
 # Output
+<img width="703" height="379" alt="image" src="https://github.com/user-attachments/assets/128e7e8c-b73d-49d3-8e06-f14228e63ac7" />
 
 
 
